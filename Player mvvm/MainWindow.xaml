@@ -1,0 +1,65 @@
+﻿<Window x:Class="Player_mvvm.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:t="clr-namespace:Taygeta.Controls;assembly=Taygeta.Controls"
+        xmlns:player="clr-namespace:Player_mvvm"
+        xmlns:i="clr-namespace:System.Windows.Interop;assembly=PresentationCore"
+        xmlns:wpf="clr-namespace:MediaControlsLibrary.Controls;assembly=MediaControlsLibrary"
+        Title="MainWindow" Height="350" Width="525" MinHeight="50" >
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="Black">
+            <t:VideoImageSource x:Name="m_videoImage" />
+
+            <Image>
+                <Image.Source>
+                    <i:D3DImage x:Name="d3dimage" ></i:D3DImage>
+                </Image.Source>
+            </Image>
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,20" Foreground="White" FontWeight="Bold" >Test subtitle</TextBlock>
+
+        </Grid>
+
+
+
+        <Border Grid.Row="1" BorderThickness="1" VerticalAlignment="Bottom" MinHeight="40">
+            <StackPanel Orientation="Vertical">
+                <wpf:VideoSlider Value="{Binding Slider}" Maximum="1"/>
+                <DockPanel >
+                    <wpf:ToggleImageButton Name="togbtn"  Grid.Row="0"  Width="25" Height="25" ActiveIcon="image/playback_pause.png" InActiveIcon="image/playback_play.png" Command="{Binding Play}"/>
+
+                    <Button Style="{DynamicResource IconButtonStyle}" Command="{Binding Stop}" Width="25" Height="25">
+                        <Image Source="image/playback_stop.png" Width="20" Height="20"></Image>
+                    </Button>
+                    <Button Style="{DynamicResource IconButtonStyle}" Width="25" Height="25">
+                        <Image Source="image/playback_prev.png" Width="20" Height="20"></Image>
+                    </Button>
+                    <Button Style="{DynamicResource IconButtonStyle}" Width="25" Height="25">
+                        <Image Source="image/playback_rew.png" Width="20" Height="20"></Image>
+                    </Button>
+                    <Button Style="{DynamicResource IconButtonStyle}" Width="25" Height="25">
+                        <Image Source="image/playback_ff.png" Width="20" Height="20"></Image>
+                    </Button>
+                    <Button Style="{DynamicResource IconButtonStyle}" Width="25" Height="25">
+                        <Image Source="image/playback_next.png" Width="20" Height="20"></Image>
+                    </Button>
+
+
+                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                        <wpf:VideoSlider Maximum="100" Width="100" VerticalAlignment="Center" Value="{Binding Slider}"/>
+                        <Label Margin="5" Content="{Binding Time}"/>
+                        <Label Margin="5" Content="{Binding Duration}"/>
+
+                    </StackPanel>
+
+                </DockPanel>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

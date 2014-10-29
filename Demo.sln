@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvalonDock", "AvalonDock\AvalonDock.csproj", "{53F4D4FA-A9FB-4D66-A4EA-74F9214A45D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "List", "List\List.csproj", "{60A4AE72-B477-4EEC-900D-6F577DE54269}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Player mvvm", "Player mvvm\Player mvvm.csproj", "{9BE4B3AE-5898-48F1-B1C9-8D47502ACC15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignTemplate", "DesignTemplate\DesignTemplate.csproj", "{DCE6AFCD-FB14-4C04-98BE-8361113BB0B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerBasic", "PlayerBasic\PlayerBasic.csproj", "{D98BCD3B-5DB2-490B-B156-794C94ADBFD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaControlsLibrary", "MediaControlsLibrary\MediaControlsLibrary\MediaControlsLibrary.csproj", "{854FF119-138C-483F-8F27-EE47B7AE5F5E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53F4D4FA-A9FB-4D66-A4EA-74F9214A45D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53F4D4FA-A9FB-4D66-A4EA-74F9214A45D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53F4D4FA-A9FB-4D66-A4EA-74F9214A45D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53F4D4FA-A9FB-4D66-A4EA-74F9214A45D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60A4AE72-B477-4EEC-900D-6F577DE54269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A4AE72-B477-4EEC-900D-6F577DE54269}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A4AE72-B477-4EEC-900D-6F577DE54269}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60A4AE72-B477-4EEC-900D-6F577DE54269}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE4B3AE-5898-48F1-B1C9-8D47502ACC15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE4B3AE-5898-48F1-B1C9-8D47502ACC15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE4B3AE-5898-48F1-B1C9-8D47502ACC15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BE4B3AE-5898-48F1-B1C9-8D47502ACC15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCE6AFCD-FB14-4C04-98BE-8361113BB0B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCE6AFCD-FB14-4C04-98BE-8361113BB0B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCE6AFCD-FB14-4C04-98BE-8361113BB0B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCE6AFCD-FB14-4C04-98BE-8361113BB0B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D98BCD3B-5DB2-490B-B156-794C94ADBFD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D98BCD3B-5DB2-490B-B156-794C94ADBFD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D98BCD3B-5DB2-490B-B156-794C94ADBFD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D98BCD3B-5DB2-490B-B156-794C94ADBFD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{854FF119-138C-483F-8F27-EE47B7AE5F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{854FF119-138C-483F-8F27-EE47B7AE5F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{854FF119-138C-483F-8F27-EE47B7AE5F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{854FF119-138C-483F-8F27-EE47B7AE5F5E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

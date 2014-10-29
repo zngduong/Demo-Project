@@ -1,0 +1,91 @@
+﻿<Window x:Class="AvalonDock.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        
+        xmlns:avalonDockProperties="clr-namespace:Xceed.Wpf.AvalonDock.Properties;assembly=Xceed.Wpf.AvalonDock"
+        xmlns:AvalondockConv="clr-namespace:Xceed.Wpf.AvalonDock.Converters;assembly=Xceed.Wpf.AvalonDock"
+        xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
+        xmlns:shell="clr-namespace:Microsoft.Windows.Shell;assembly=Xceed.Wpf.AvalonDock"
+        
+        xmlns:pane="clr-namespace:AvalonDock.View.Pane"
+        xmlns:view="clr-namespace:AvalonDock.View"
+        
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="_File">
+                <MenuItem Header="New"/>
+                <MenuItem Header="Open"/>
+                <Separator/>
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Save As..."/>
+                <Separator/>
+                <MenuItem Header="Close"/>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="Properties" IsCheckable="True"/>
+            </MenuItem>
+        </Menu>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <ToolBarTray Grid.Column="0">
+                <ToolBar ToolBarTray.IsLocked="True">
+                    <Button >
+                        <Image Source="/AvalonDock;component/Images/gallery.png" Width="32" Height="32" SnapsToDevicePixels="True"></Image>
+                    </Button>
+                    <Button SnapsToDevicePixels="True">
+                        <Image Source="/AvalonDock;component/Images/gallery.png" Width="32" Height="32" SnapsToDevicePixels="True"></Image>
+                    </Button>
+
+                </ToolBar>
+            </ToolBarTray>
+        </Grid>
+        
+        <avalonDock:DockingManager AnchorablesSource="{Binding Views}" Grid.Row="2">
+            <!--LayoutTemplate override SelectTemplate-->
+            <avalonDock:DockingManager.LayoutItemTemplateSelector>
+                <pane:PanesTemplateSelector>
+                    <pane:PanesTemplateSelector.LibraryViewTemplate>
+                        <DataTemplate>
+                            <view:LibraryView />
+                        </DataTemplate>
+                    </pane:PanesTemplateSelector.LibraryViewTemplate>
+                    <pane:PanesTemplateSelector.PlayerViewTemplate>
+                        <DataTemplate>
+                            <view:PlayerView />
+                        </DataTemplate>
+                    </pane:PanesTemplateSelector.PlayerViewTemplate>
+                </pane:PanesTemplateSelector>
+            </avalonDock:DockingManager.LayoutItemTemplateSelector>
+            
+            <!--LayoutStyle override SelectStyle-->
+            <avalonDock:DockingManager.LayoutItemContainerStyleSelector>
+                <pane:PanesStyleSelector>
+                    <pane:PanesStyleSelector.LibraryStyle>
+                        <Style TargetType="{x:Type avalonDock:LayoutAnchorableItem}">
+                            <Setter Property="Title" Value="abc" />
+                            <Setter Property="CanHide" Value="False" />
+                            
+                        </Style>
+                    </pane:PanesStyleSelector.LibraryStyle>
+                    <pane:PanesStyleSelector.PlayerStyle>
+                        <Style TargetType="{x:Type avalonDock:LayoutAnchorableItem}">
+                            <Setter Property="Title" Value="xyz" />
+                        </Style>
+                    </pane:PanesStyleSelector.PlayerStyle>
+                </pane:PanesStyleSelector>
+            </avalonDock:DockingManager.LayoutItemContainerStyleSelector>
+            
+            
+        </avalonDock:DockingManager>
+    </Grid>
+</Window>

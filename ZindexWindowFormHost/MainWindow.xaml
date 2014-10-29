@@ -1,0 +1,17 @@
+﻿<Window x:Class="ZindexWindowFormHost.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        Title="InteropZOrderDemo" Height="400" Width="400">
+    <Grid>
+        <ListBox ItemsSource="{Binding}" x:Name="listBox">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WindowsFormsHost x:Name="wfh">
+                        <wf:Button Text="Button" Width="100" Height="60"/>
+                    </WindowsFormsHost>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>
