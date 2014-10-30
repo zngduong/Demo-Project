@@ -15,8 +15,6 @@ namespace Player_mvvm
         private BitmapFormat m_format;
         private IMemoryRendererEx m_source;
 
-        
-
         public MainWindow()
         {
             InitializeComponent();

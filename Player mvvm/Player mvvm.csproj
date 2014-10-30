@@ -144,8 +144,8 @@
     <Resource Include="image\playback_pause.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MediaControlsLibrary\MediaControlsLibrary\MediaControlsLibrary.csproj">
-      <Project>{854ff119-138c-483f-8f27-ee47b7ae5f5e}</Project>
+    <ProjectReference Include="..\MediaControlsLibrary\MediaControlsLibrary.csproj">
+      <Project>{aea8b9b6-04ec-4a04-b403-28b26345f9ee}</Project>
       <Name>MediaControlsLibrary</Name>
     </ProjectReference>
   </ItemGroup>

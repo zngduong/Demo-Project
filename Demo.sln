@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignTemplate", "DesignTem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayerBasic", "PlayerBasic\PlayerBasic.csproj", "{D98BCD3B-5DB2-490B-B156-794C94ADBFD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaControlsLibrary", "MediaControlsLibrary\MediaControlsLibrary\MediaControlsLibrary.csproj", "{854FF119-138C-483F-8F27-EE47B7AE5F5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaControlsLibrary", "MediaControlsLibrary\MediaControlsLibrary.csproj", "{AEA8B9B6-04EC-4A04-B403-28B26345F9EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{D98BCD3B-5DB2-490B-B156-794C94ADBFD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D98BCD3B-5DB2-490B-B156-794C94ADBFD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D98BCD3B-5DB2-490B-B156-794C94ADBFD6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{854FF119-138C-483F-8F27-EE47B7AE5F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{854FF119-138C-483F-8F27-EE47B7AE5F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{854FF119-138C-483F-8F27-EE47B7AE5F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{854FF119-138C-483F-8F27-EE47B7AE5F5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEA8B9B6-04EC-4A04-B403-28B26345F9EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEA8B9B6-04EC-4A04-B403-28B26345F9EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEA8B9B6-04EC-4A04-B403-28B26345F9EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEA8B9B6-04EC-4A04-B403-28B26345F9EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

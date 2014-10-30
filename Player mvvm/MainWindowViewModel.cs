@@ -39,7 +39,7 @@ namespace Player_mvvm
 
         public event EventHandler StopEvent;
 
-        private string FileName = @"C:\Users\cuchuoi137\Downloads\Video\1.MP4";
+        private string FileName = @"C:\Users\cuchuoi137\Downloads\Video\Larva 2014.MP4";
         #region constructor
         public MainWindowViewModel()
         {
@@ -249,118 +249,118 @@ namespace Player_mvvm
             Duration = "00:00:00";
         }
 
-        #region D3DImage Render
-        #region Properties
-        public ImageSource SourceD3D
-        {
-            get
-            {
-                return _source;
-            }
-        }
-        #endregion
+        //#region D3DImage Render
+        //#region Properties
+        //public ImageSource SourceD3D
+        //{
+        //    get
+        //    {
+        //        return _source;
+        //    }
+        //}
+        //#endregion
 
-        private D3DImage m_image;
-        private D3D9Renderer m_render;
-        private BitmapFormat m_format;
-        private IMemoryRendererEx m_source;
+        //private D3DImage m_image;
+        //private D3D9Renderer m_render;
+        //private BitmapFormat m_format;
+        //private IMemoryRendererEx m_source;
 
-        public void VideoImageSource()
-        {
-            m_image = new D3DImage();
-            m_image.IsFrontBufferAvailableChanged += new DependencyPropertyChangedEventHandler(m_image_IsFrontBufferAvailableChanged);
-            _source = m_image;
-        }
+        //public void VideoImageSource()
+        //{
+        //    m_image = new D3DImage();
+        //    m_image.IsFrontBufferAvailableChanged += new DependencyPropertyChangedEventHandler(m_image_IsFrontBufferAvailableChanged);
+        //    _source = m_image;
+        //}
 
-        void m_image_IsFrontBufferAvailableChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            if (!m_image.IsFrontBufferAvailable)
-            {
-                DiscardRenderer();
-            }
-            else
-            {
-                SetSurface(m_format);
-            }
-        }
+        //void m_image_IsFrontBufferAvailableChanged(object sender, DependencyPropertyChangedEventArgs e)
+        //{
+        //    if (!m_image.IsFrontBufferAvailable)
+        //    {
+        //        DiscardRenderer();
+        //    }
+        //    else
+        //    {
+        //        SetSurface(m_format);
+        //    }
+        //}
 
-        private void DiscardRenderer()
-        {
-            if (m_render != null)
-            {
-                m_render.Dispose();
-                m_render = null;
-            }
-        }
+        //private void DiscardRenderer()
+        //{
+        //    if (m_render != null)
+        //    {
+        //        m_render.Dispose();
+        //        m_render = null;
+        //    }
+        //}
 
-        private void CreateRenderer()
-        {
-            DiscardRenderer();
-            m_render = new D3D9Renderer(IntPtr.Zero);
-            m_render.DisplayMode = VideoDisplayMode.KeepAspectRatio;
-        }
+        //private void CreateRenderer()
+        //{
+        //    DiscardRenderer();
+        //    m_render = new D3D9Renderer(IntPtr.Zero);
+        //    m_render.DisplayMode = VideoDisplayMode.KeepAspectRatio;
+        //}
 
-        public void Initialize(IMemoryRendererEx renderer)
-        {
-            m_source = renderer;
-            m_source.SetFormatSetupCallback(OnFormatSetup);
-            m_source.SetCallback(OnNewFrame);
-        }
+        //public void Initialize(IMemoryRendererEx renderer)
+        //{
+        //    m_source = renderer;
+        //    m_source.SetFormatSetupCallback(OnFormatSetup);
+        //    m_source.SetCallback(OnNewFrame);
+        //}
 
-        private BitmapFormat OnFormatSetup(BitmapFormat format)
-        {
-            m_format = format;
-            SetSurface(format);
-            return new BitmapFormat(format.Width, format.Height, ChromaType.I420);
-        }
+        //private BitmapFormat OnFormatSetup(BitmapFormat format)
+        //{
+        //    m_format = format;
+        //    SetSurface(format);
+        //    return new BitmapFormat(format.Width, format.Height, ChromaType.I420);
+        //}
 
-        private void SetSurface(BitmapFormat format)
-        {
-            CreateRenderer();
-            m_render.CreateVideoSurface(format.Width, format.Height, Taygeta.Core.PixelFormat.YV12, m_source.SAR.Ratio);
-            m_image.Dispatcher.Invoke(new Action(delegate
-            {
-                m_image.Lock();
-                m_image.SetBackBuffer(D3DResourceType.IDirect3DSurface9, m_render.RenderTargetSurface);
-                m_image.Unlock();
-            }), DispatcherPriority.Send);
-        }
+        //private void SetSurface(BitmapFormat format)
+        //{
+        //    CreateRenderer();
+        //    m_render.CreateVideoSurface(format.Width, format.Height, Taygeta.Core.PixelFormat.YV12, m_source.SAR.Ratio);
+        //    m_image.Dispatcher.Invoke(new Action(delegate
+        //    {
+        //        m_image.Lock();
+        //        m_image.SetBackBuffer(D3DResourceType.IDirect3DSurface9, m_render.RenderTargetSurface);
+        //        m_image.Unlock();
+        //    }), DispatcherPriority.Send);
+        //}
 
-        private void OnNewFrame(PlanarFrame frame)
-        {
-            m_image.Dispatcher.Invoke(new Action(delegate
-            {
-                if (!m_image.IsFrontBufferAvailable)
-                {
-                    return;
-                }
+        //private void OnNewFrame(PlanarFrame frame)
+        //{
+        //    m_image.Dispatcher.Invoke(new Action(delegate
+        //    {
+        //        if (!m_image.IsFrontBufferAvailable)
+        //        {
+        //            return;
+        //        }
 
-                m_image.Lock();
-                m_render.Display(frame.Planes[0], frame.Planes[2], frame.Planes[1], false);
-                m_image.AddDirtyRect(new Int32Rect(0, 0, m_image.PixelWidth, m_image.PixelHeight));
-                m_image.Unlock();
-            }), DispatcherPriority.Send);
-        }
+        //        m_image.Lock();
+        //        m_render.Display(frame.Planes[0], frame.Planes[2], frame.Planes[1], false);
+        //        m_image.AddDirtyRect(new Int32Rect(0, 0, m_image.PixelWidth, m_image.PixelHeight));
+        //        m_image.Unlock();
+        //    }), DispatcherPriority.Send);
+        //}
 
-        public D3D9Renderer RenderTarget
-        {
-            get
-            {
-                return m_render;
-            }
-        }
+        //public D3D9Renderer RenderTarget
+        //{
+        //    get
+        //    {
+        //        return m_render;
+        //    }
+        //}
 
-        public void Clear()
-        {
-            m_image.Dispatcher.BeginInvoke(new Action(delegate
-            {
-                m_image.Lock();
-                m_render.Clear(System.Drawing.Color.Black);
-                m_image.SetBackBuffer(D3DResourceType.IDirect3DSurface9, IntPtr.Zero);
-                m_image.Unlock();
-            }), DispatcherPriority.Send);
-        }
-        #endregion
+        //public void Clear()
+        //{
+        //    m_image.Dispatcher.BeginInvoke(new Action(delegate
+        //    {
+        //        m_image.Lock();
+        //        m_render.Clear(System.Drawing.Color.Black);
+        //        m_image.SetBackBuffer(D3DResourceType.IDirect3DSurface9, IntPtr.Zero);
+        //        m_image.Unlock();
+        //    }), DispatcherPriority.Send);
+        //}
+        //#endregion
 
     }
 }

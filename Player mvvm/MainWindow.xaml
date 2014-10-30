@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Background="Black">
-            <t:VideoImageSource x:Name="m_videoImage" />
+            <!--<t:VideoImageSource x:Name="m_videoImage" />-->
 
             <Image>
                 <Image.Source>
